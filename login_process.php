@@ -3,7 +3,7 @@
 session_start();
 $local = "localhost";
 $user = "root";
-$pass = "";
+$pass = "root";
 $db = "cert_gen";
 $conn = new mysqli($local, $user, $pass, $db);
 
