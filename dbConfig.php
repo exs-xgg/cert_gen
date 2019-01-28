@@ -2,7 +2,7 @@
 //db details
 $dbHost = 'localhost';
 $dbUsername = 'root';
-$dbPassword = '';
+$dbPassword = 'root';
 $dbName = 'cert_gen';
 
 //Connect and select the database
