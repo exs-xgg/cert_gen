@@ -1,0 +1,48 @@
+body{
+/*    background-color: #87c1ff;*/
+  }
+    .icon-bar {
+      width: 100px;       /* Set a specific width */
+      background-color: #87c1ff; /* Dark-grey background */
+      position: fixed;
+      margin-top: 5px;
+      
+    }
+
+    .icon-bar a {
+      display: block;     /* Make the links appear below each other instead of side-by-side */
+      text-align: center;   /* Center-align text */
+      padding: 20px;      /* Add some padding */
+      transition: all 0.3s ease; /* Add transition for hover effects */
+      color: #fff ;       /* White text color */
+      font-size: 36px;    /* Increased font-size */
+    }
+
+    .icon-bar a:hover {
+      background-color: #007bff; /* Add a hover color */
+      color:#fff;
+    } 
+
+    .icon-bar p{
+      font-size: 14px;
+      color: #fff;
+    } 
+    .container{
+      padding: 30px;
+    }
+    .train{
+      transition: transform 3s;
+      
+
+    }
+    .train:hover{
+     transform: scale(1.1);
+     box-shadow: 0px 0px 15px #000000;
+
+    }
+    .logo{
+      text-align: center;
+    }
+   .nav-pills .nav-link.active, .nav-pills .show .nav-link{
+    color:#fff;
+   }
