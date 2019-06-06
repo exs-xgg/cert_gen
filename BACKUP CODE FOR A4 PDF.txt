@@ -72,17 +72,15 @@ $muncity_val = $muncity_row['muncity_name'];
 // 215.9 × 279.4 mm (Letter, portrait)
 
 
-if (isset($_GET['award'])) 
-
-{
+if (isset($_GET['award'])) {
 require 'fpdf181/fpdf.php';
-$pdf = new FPDF('P', 'mm', 'Letter');
+$pdf = new FPDF('P', 'mm', 'A4');
 
 $pdf->AddPage();
 //border
 $pdf->SetLineWidth(2);
 $pdf->SetDrawColor(68,0,123);
-$pdf->Rect(20,20,176,240,'D');
+$pdf->Rect(17,20,176,260,'D');
 
 //icon
 $pdf->Image('icon/wah_icon.png', 40,25 ,27); //wah logo
@@ -125,7 +123,7 @@ $pdf->MultiCell(0,5,"ELECTRONIC HEALTH RECORDING SYSTERM (EHR)", 0, "C", 0);
 $pdf->SetFont('times', 'B', 22); //font for cert completion
 $pdf->SetTextColor(68,0,123); //font color rgb
 $pdf->MultiCell(0, 2, "", 0, "C", 0);
-$pdf->MultiCell(0,5,"".($training_name)."", 0, "C", 0);
+$pdf->MultiCell(0,5,"".ucwords($training_name)."", 0, "C", 0);
 
 function start_date($date_start){
 	$dstart = date('F j', strtotime($date_start));
@@ -254,7 +252,7 @@ function monthyear($award_date){
 }
 
 $pdf->SetTextColor(0,0,0); //font color rgb
-$pdf->MultiCell(0, 15, "\n \n \n \n", 0, "C", 0);
+$pdf->MultiCell(0, 16, "\n \n \n \n ", 0, "C", 0);
 !$pdf->MultiCell(0, 2, "", 0, "C", 0);
 $pdf->MultiCell(0, 5, "This further certifies that the awardee successfully completed
 the required "	.numberTowords($hrs). " hours (" .$hrs. ") of seminar and hands-on training
@@ -268,14 +266,14 @@ $pdf->Cell(10, 3, "", 0, 0, "C");
 $pdf->Cell(70, 3, "" .$lgu_assigntory. "", 0, 0, 'C');
 $pdf->Cell(10, 3, "", 0, 0, 'C');
 $pdf->MultiCell(0, 3, "\n", 0, "C", 0);
-$pdf->line(35, 246, 95, 246);
-$pdf->line(125, 246, 185, 246);
+$pdf->line(35, 266, 95, 266);
+$pdf->line(125, 266, 185, 266);
 
 $pdf->SetFont('times', '', 7.5);
 $pdf->Cell(10, 3, "", 0, 0, 'C');
 $pdf->Cell(90, 8, "President", 0, 0, "C");
 $pdf->Cell(10, 3, "", 0, 0, "C");
-$pdf->Cell(70, 8, "Mayor", 0, 0, "C");
+$pdf->Cell(70, 8, "MuniciapMayor", 0, 0, "C");
 $pdf->Cell(10, 3, "", 0, 0, 'C');
 $pdf->MultiCell(0, 2.3, "\n", 0, "C", 0);
 $pdf->Cell(10, 3, "", 0, 0, 'C');
@@ -283,7 +281,7 @@ $pdf->Cell(90, 8, "Wireless Access for Health Initiative, Inc.", 0, 0, "C");
 $pdf->Cell(10, 3, "", 0, 0, "C");
 $pdf->Cell(70, 8, "".$muncity_val.", ".$prov_val.", Philippines", 0, 0, "C");
 
-$pdf->Image('president_sign.png', 55, 230, 20);
+$pdf->Image('president_sign.png', 55, 250, 20);
 
 
 $pdf->Output();

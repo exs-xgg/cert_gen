@@ -1,6 +1,6 @@
 
 <?php
-$con = new mysqli('localhost', 'root', 'root', 'cert_gen');
+$con = new mysqli('localhost', 'root', '', 'cert_gen');
 
 if ($con->connect_error)
 	{
